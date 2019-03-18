@@ -1,0 +1,13 @@
+<!-- 管道是格式化字符串、金额、日期和其他显示数据的好办法，'|'是管道操作符，uppercase是内置管道 -->
+<h2> {{ hero.name | uppercase }} 详情</h2>
+<div>
+  <span>id: </span> {{ hero.id }}
+</div>
+<div>
+  <label>name: 
+    <!-- [(ngModel)]是Angular的双向数据绑定语法 -->
+    <!-- 虽然 ngModel 是一个有效的 Angular 指令，不过它在默认情况下是不可用的。
+         它属于一个可选模块 FormsModule，必须自行添加此模块才能使用该指令 -->
+    <input [(ngModel)]="hero.name" placeholder="name">
+  </label>
+</div>
