@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
+import { HEROES } from '../mock-heroes';
 
 // @Component是个装饰器函数，用于为该组件指定Angular所需的元数据
 @Component({
@@ -10,10 +11,11 @@ import { Hero } from '../hero';
 
 // 一定要export这个组件类，以便于在其他地方导入它
 export class HeroesComponent implements OnInit {
-  hero: Hero = {
-    id: 1,
-    name: '盖伦-Galenus'
-  };
+  heroes = HEROES;
+  selectedHero: Hero;
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero
+  }
 
   constructor() { }
 

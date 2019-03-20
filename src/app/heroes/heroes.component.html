@@ -1,13 +1,26 @@
 <!-- 管道是格式化字符串、金额、日期和其他显示数据的好办法，'|'是管道操作符，uppercase是内置管道 -->
-<h2> {{ hero.name | uppercase }} 详情</h2>
-<div>
-  <span>id: </span> {{ hero.id }}
-</div>
-<div>
-  <label>name: 
-    <!-- [(ngModel)]是Angular的双向数据绑定语法 -->
-    <!-- 虽然 ngModel 是一个有效的 Angular 指令，不过它在默认情况下是不可用的。
-         它属于一个可选模块 FormsModule，必须自行添加此模块才能使用该指令 -->
-    <input [(ngModel)]="hero.name" placeholder="name">
-  </label>
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <!-- *ngFor是一个Angularde的复写器指令（repeater），它会为列表中的每项数据复写它的宿主元素 -->
+  <!-- click外面的()会让Angular监听这个<li>元素的click事件 -->
+  <!-- Angular的CSS类绑定详情参考：https://angular.cn/guide/template-syntax#class-binding -->  
+  <li *ngFor="let hero of heroes" 
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">
+    <span class="badge">{{ hero.id }}</span>{{ hero.name }}
+  </li>
+</ul>
+<div *ngIf="selectedHero">
+  <h2>{{ selectedHero.name | uppercase }}详情</h2>
+  <div>
+    <span>id: </span> {{ selectedHero.id }}
+  </div>
+  <div>
+    <label>name: 
+      <!-- [(ngModel)]是Angular的双向数据绑定语法 -->
+      <!-- 虽然 ngModel 是一个有效的 Angular 指令，不过它在默认情况下是不可用的。
+          它属于一个可选模块 FormsModule，必须自行添加此模块才能使用该指令 -->
+      <input [(ngModel)]="selectedHero.name" placeholder="name">
+    </label>
+  </div>
 </div>

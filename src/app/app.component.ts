@@ -1,6 +1,6 @@
-/* 从Angular核心模块里面引入了component装饰器 */
+/* 从Angular核心模块里面引入了component装饰器(用于为该组件指定Angular所需的元数据) */
 import { Component } from '@angular/core';
-
+ 
 @Component({
   /* 组件元数据  Angular会通过这里面的属性来渲染组件并执行逻辑
    * selector 就是css选择器，表示这个组件可以通过app-root来调用，index.html中有个<app-root>Loading...</app-root>标签，这个标签用来展示该组件的内容
