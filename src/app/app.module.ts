@@ -6,12 +6,16 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 // 每个组件都必须声明在（且只能声明在）一个NgModule中
 import { HeroesComponent } from './heroes/heroes.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { MessagesComponent } from './messages/messages.component';
 
 // @NgModule装饰器，接受一个元数据对象，告诉Angular如何编译和启动应用
 @NgModule({
   declarations: [ // 配置当前项目运行的组件
     AppComponent,
-    HeroesComponent
+    HeroesComponent,
+    HeroDetailComponent,
+    MessagesComponent
   ],
   imports: [ // imports数组是该应用所需外部模块的列表
     BrowserModule,
