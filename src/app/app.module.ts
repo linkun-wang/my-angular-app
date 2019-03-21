@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 // @NgModule装饰器，接受一个元数据对象，告诉Angular如何编译和启动应用
 @NgModule({
@@ -15,11 +17,13 @@ import { MessagesComponent } from './messages/messages.component';
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [ // imports数组是该应用所需外部模块的列表
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [], // 配置项目所需要的服务
   bootstrap: [AppComponent] // 指定应用的主视图（根组件），通过引导根模块AppModule来启动应用
