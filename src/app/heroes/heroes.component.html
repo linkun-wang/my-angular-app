@@ -4,11 +4,10 @@
   <!-- *ngFor是一个Angularde的复写器指令（repeater），它会为列表中的每项数据复写它的宿主元素 -->
   <!-- click外面的()会让Angular监听这个<li>元素的click事件 -->
   <!-- Angular的CSS类绑定详情参考：https://angular.cn/guide/template-syntax#class-binding -->  
-  <li *ngFor="let hero of heroes" 
-    [class.selected]="hero === selectedHero"
-    (click)="onSelect(hero)">
-    <span class="badge">{{ hero.id }}</span>{{ hero.name }}
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{ hero.id }}</span>{{ hero.name }}
+    </a>
   </li>
 </ul>
 <!-- [hero]="selectedHero" 是 Angular 的属性绑定语法（这是一种单向数据绑定），详见：https://angular.cn/guide/template-syntax#property-binding -->
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
